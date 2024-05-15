@@ -1,42 +1,100 @@
+body {
+  place-items: start;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
+  min-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* padding: 2rem; */
+  /* text-align: center; */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.add-section {
+  background-color: rgb(224, 224, 224);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  color:black;
+  align-items: center;
+  width:800px;
+  gap:30px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputs {
+  margin-left:30px;
+  background-color: rgb(224, 224, 224);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  color:black;
+  align-items: center;
+
+  gap: 10px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-label-title, .input-label-content {
+  padding: 10px;
+
 }
 
-.card {
-  padding: 2em;
+
+.input-title {
+  height: 30px;
+  width: 150px;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.input-content {
+  height: 30px;
+  width: 310px;
+  align-items: center;
+}
+
+.todo-list-section {
+  margin-top: 25px;
+  border-width: 2px;
+  border-color: aliceblue;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+
+.todo-text-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-left:30px;
+}
+
+.todo-title, .done-title {
+  padding:10px;
+  background-color: brown;
+  width: 130px;
+}
+
+.todo-content, .done-content {
+  padding:10px;
+  background-color: brown;
+  width: 550px;
+}
+
+.todo-btn-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-left:30px;
+}
+
+.delete-btn {
+  width: 120px;
+  background-color: rgb(79, 0, 0);
+}
+
+.complete-btn {
+  width: 120px;
+  background-color: rgb(0, 79, 46);
 }
