@@ -1,0 +1,14 @@
+.done-list-section {
+    margin-top: 25px;
+    border-width: 2px;
+    border-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
+  }
+  
+  .cancel-btn {
+    width: 120px;
+    background-color: rgb(193, 193, 193);
+    color:black;
+  }
