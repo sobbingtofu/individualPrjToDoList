@@ -22,6 +22,8 @@ const AddSection = ({todoList, setTodoList}) => {
     // 버튼 클릭 시 input 초기화되도록 설정
     setInputTitle("");
     setInputContent("");
+
+    localStorage.setItem(JSON.parse(newTodo.id), JSON.stringify([newTodo.title, newTodo.content, newTodo.isDone]));
   };
 
   return (

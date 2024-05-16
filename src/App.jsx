@@ -7,7 +7,8 @@ import DoneSection from "./components/DoneSection.jsx";
 
 const App = () => {
   // todo 객체들이 저장되는 배열 todoList 생성
-  const [todoList, setTodoList] = useState([]);
+  // 로컬스토리지에서 불러오며, 로컬스토리지가 비어있다면 빈 배열로 생성
+  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem("todos")) || []);
 
   return (
     <>
