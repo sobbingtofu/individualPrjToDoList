@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import "./App.css";
-import "./WorkingSection.css";
+import "../App.css";
+import "./style/WorkingSection.css";
 
 const WorkingSection = ({todoList, setTodoList}) => {
   // 삭제하기 버튼 누르면 실행될 함수

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import {useState} from "react";
-import "./App.css";
+import "../App.css";
 
 const AddSection = ({todoList, setTodoList}) => {
   // 사용자가 input하는 정보가 담기는 state들 생성
@@ -18,6 +18,10 @@ const AddSection = ({todoList, setTodoList}) => {
       isDone: false,
     };
     setTodoList([...todoList, newTodo]);
+
+    // 버튼 클릭 시 input 초기화되도록 설정
+    setInputTitle("");
+    setInputContent("");
   };
 
   return (

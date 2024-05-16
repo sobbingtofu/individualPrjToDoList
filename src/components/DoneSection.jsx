@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import "./DoneSection.css";
-import "./App.css";
+import "./style/DoneSection.css";
+import "../App.css";
 
 const DoneSection = ({todoList, setTodoList}) => {
   const deleteTodo = (e) => {
