@@ -11,7 +11,7 @@ const AddSection = ({todoList, setTodoList}) => {
   // 사용자가 input한 정보를 새로운 todo 객체로 만들고, 이를 todoList 배열에 저장
   const addTodo = () => {
     const newTodo = {
-      // id: todoList.length+1, 중복 이슈 발생
+      // id: todoList.length+1, 중복 이슈 발생하므로 시간으로 대체함
       id: Date.now(),
       title: inputTitle,
       content: inputContent,
@@ -23,7 +23,8 @@ const AddSection = ({todoList, setTodoList}) => {
     setInputTitle("");
     setInputContent("");
 
-    localStorage.setItem(JSON.parse(newTodo.id), JSON.stringify([newTodo.title, newTodo.content, newTodo.isDone]));
+    // 로컬 스토리지에도 현재 newTodo 객체 추가함
+    localStorage.setItem("todos", JSON.stringify([...todoList, newTodo]));
   };
 
   return (
