@@ -28,34 +28,59 @@ const WorkingSection = ({todoList, setTodoList}) => {
     localStorage.setItem("todos", JSON.stringify([...todoList]));
   };
 
-  return (
-    <>
-      <h3>Working</h3>
-      <section className="working-list-section">
-        {todoList.map((todo) => {
-          if (todo.isDone === false) {
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <section className="todo-section" id={todo.id}>
-                <section className="todo-text-section">
-                  <p className="todo-title">{todo.title}</p>
-                  <p className="todo-content">{todo.content}</p>
+  // 표시할 게 없으면 empty라고 뜨도록 로직 설정
+  if (todoList.length === 0) {
+    return (
+      <>
+        <h3>Working</h3>
+        <section className="working-list-section">
+          <p className="note">empty</p>
+        </section>
+      </>
+    );
+  } else if (
+    todoList.every((todo) => {
+      return todo.isDone;
+    })
+  ) {
+    return (
+      <>
+        <h3>Working</h3>
+        <section className="working-list-section">
+          <p className="note">empty</p>
+        </section>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h3>Working</h3>
+        <section className="working-list-section">
+          {todoList.map((todo) => {
+            if (todo.isDone === false) {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <section className="todo-section" id={todo.id} key={todo.id}>
+                  <section className="todo-text-section">
+                    <p className="todo-title">{todo.title}</p>
+                    <p className="todo-content">{todo.content}</p>
+                  </section>
+                  <section className="todo-btn-section">
+                    <button className="delete-btn" onClick={deleteTodo}>
+                      삭제하기
+                    </button>
+                    <button className="complete-btn" onClick={shiftToDone}>
+                      완료
+                    </button>
+                  </section>
                 </section>
-                <section className="todo-btn-section">
-                  <button className="delete-btn" onClick={deleteTodo}>
-                    삭제하기
-                  </button>
-                  <button className="complete-btn" onClick={shiftToDone}>
-                    완료
-                  </button>
-                </section>
-              </section>
-            );
-          }
-        })}
-      </section>
-    </>
-  );
+              );
+            }
+          })}
+        </section>
+      </>
+    );
+  }
 };
 
 export default WorkingSection;

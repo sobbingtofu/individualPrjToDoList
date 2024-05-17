@@ -11,4 +11,12 @@
     width: 120px;
     background-color: rgb(193, 193, 193);
     color:black;
+    transition: 0.3s;
+  }
+
+  .cancel-btn:hover {
+    width: 120px;
+    background-color: rgb(161, 160, 160);
+    transition: 0.2s;
+
   }

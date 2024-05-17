@@ -9,5 +9,11 @@
 
 .complete-btn {
     width: 120px;
-    background-color: rgb(30, 93, 66);
+    background-color: rgb(25, 122, 80);
+    transition: 0.3s;
+}
+
+.complete-btn:hover {
+    background-color: rgb(11, 92, 57);
+    transition: 0.2s;
 }

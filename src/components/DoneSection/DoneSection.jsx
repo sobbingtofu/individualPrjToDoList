@@ -27,34 +27,57 @@ const DoneSection = ({todoList, setTodoList}) => {
     // 로컬스토리지에도 todo의 이동 적용된 deletedTodoList를 반영시킴
     localStorage.setItem("todos", JSON.stringify([...todoList]));
   };
-
-  return (
-    <>
-      <h3>Done</h3>
-      <section className="done-list-section">
-        {todoList.map((todo) => {
-          if (todo.isDone === true) {
-            return (
-              <section className="todo-section" id={todo.id}>
-                <section className="todo-text-section">
-                  <p className="done-title">{todo.title}</p>
-                  <p className="done-content">{todo.content}</p>
+  if (todoList.length === 0) {
+    return (
+      <>
+        <h3>Done</h3>
+        <section className="working-list-section">
+          <p className="note">empty</p>
+        </section>
+      </>
+    );
+  } else if (
+    todoList.every((todo) => {
+      return !todo.isDone;
+    })
+  ) {
+    return (
+      <>
+        <h3>Done</h3>
+        <section className="working-list-section">
+          <p className="note">empty</p>
+        </section>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h3>Done</h3>
+        <section className="done-list-section">
+          {todoList.map((todo) => {
+            if (todo.isDone === true) {
+              return (
+                <section className="todo-section" id={todo.id} key={todo.id}>
+                  <section className="todo-text-section">
+                    <p className="done-title">{todo.title}</p>
+                    <p className="done-content">{todo.content}</p>
+                  </section>
+                  <section className="todo-btn-section">
+                    <button className="delete-btn" onClick={deleteTodo}>
+                      삭제하기
+                    </button>
+                    <button className="cancel-btn" onClick={shiftToTodo}>
+                      취소
+                    </button>
+                  </section>
                 </section>
-                <section className="todo-btn-section">
-                  <button className="delete-btn" onClick={deleteTodo}>
-                    삭제하기
-                  </button>
-                  <button className="cancel-btn" onClick={shiftToTodo}>
-                    취소
-                  </button>
-                </section>
-              </section>
-            );
-          }
-        })}
-      </section>
-    </>
-  );
+              );
+            }
+          })}
+        </section>
+      </>
+    );
+  }
 };
 
 export default DoneSection;
