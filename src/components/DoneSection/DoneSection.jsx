@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
-import "./style/DoneSection.css";
-import "../App.css";
+import "./DoneSection.css";
+import "../../App";
 
 const DoneSection = ({todoList, setTodoList}) => {
   const deleteTodo = (e) => {

@@ -1,9 +1,9 @@
 import {useState} from "react";
 import "./App.css";
 
-import AddSection from "./components/AddSection.jsx";
-import WorkingSection from "./components/WorkingSection.jsx";
-import DoneSection from "./components/DoneSection.jsx";
+import AddSection from "./components/AddSection/AddSection.jsx";
+import WorkingSection from "./components/WorkingSection/WorkingSection.jsx";
+import DoneSection from "./components/DoneSection/DoneSection.jsx";
 
 const App = () => {
   // todo 객체들이 저장되는 배열 todoList 생성
