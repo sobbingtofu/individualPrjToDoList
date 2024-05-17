@@ -2,12 +2,18 @@
     margin-top: 25px;
     border-width: 2px;
     border-color: aliceblue;
-    padding: 10px;
+    padding: 15px 5px 30px 10px;
     border-radius: 10px;
     background-color: aliceblue;
 }
 
 .complete-btn {
     width: 120px;
-    background-color: rgb(30, 93, 66);
+    background-color: rgb(25, 122, 80);
+    transition: 0.3s;
+}
+
+.complete-btn:hover {
+    background-color: rgb(11, 92, 57);
+    transition: 0.2s;
 }
